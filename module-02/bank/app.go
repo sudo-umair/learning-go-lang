@@ -1,15 +1,23 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 	"os"
 	"strconv"
 )
 
 const balanceFile = "balance.txt"
+const defaultBalance = 1000.0
 
 func main() {
-	accountBalance := readBalanceFromFile()
+	accountBalance, err := readBalanceFromFile()
+
+	if err != nil {
+		fmt.Println("ERROR!")
+		fmt.Println(err)
+		fmt.Println("-----------------------------------")
+	}
 
 	fmt.Println("Welcome to the bank!")
 
@@ -85,11 +93,20 @@ func writeBalanceToFile(balance float64) {
 	// https://www.redhat.com/sysadmin/linux-file-permissions-explained
 }
 
-func readBalanceFromFile() float64 {
-	data, _ := os.ReadFile(balanceFile)
+func readBalanceFromFile() (float64, error) {
+	data, err := os.ReadFile(balanceFile)
+
+	if err != nil {
+		return defaultBalance, errors.New("could not read balance file")
+	}
+
 	balanceText := string(data)
-	balance, _ := strconv.ParseFloat(balanceText, 64)
+	balance, err := strconv.ParseFloat(balanceText, 64)
+
+	if err != nil {
+		return defaultBalance, errors.New("could not parse balance")
+	}
 
 	// https://golang.org/pkg/strconv/#ParseFloat
-	return balance
+	return balance, nil
 }
