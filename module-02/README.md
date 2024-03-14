@@ -19,3 +19,4 @@
 - Infinite For loops
 - `break` and `continue` statements
 - Switch statements
+- File I/O

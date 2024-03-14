@@ -1,9 +1,15 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+	"strconv"
+)
+
+const balanceFile = "balance.txt"
 
 func main() {
-	accountBalance := 1000.0
+	accountBalance := readBalanceFromFile()
 
 	fmt.Println("Welcome to the bank!")
 
@@ -36,6 +42,7 @@ func main() {
 			}
 
 			accountBalance += depositAmount
+			writeBalanceToFile(accountBalance)
 			fmt.Printf("Your new account balance is: %.2f\n", accountBalance)
 
 		case 3: // Withdraw
@@ -54,6 +61,7 @@ func main() {
 			}
 
 			accountBalance -= withdrawAmount
+			writeBalanceToFile(accountBalance)
 			fmt.Printf("Your new account balance is: %.2f\n", accountBalance)
 
 		case 4: // Exit
@@ -68,4 +76,20 @@ func main() {
 
 	}
 
+}
+
+func writeBalanceToFile(balance float64) {
+	balanceText := fmt.Sprintf("%.2f", balance)
+	os.WriteFile(balanceFile, []byte(balanceText), 0644)
+
+	// https://www.redhat.com/sysadmin/linux-file-permissions-explained
+}
+
+func readBalanceFromFile() float64 {
+	data, _ := os.ReadFile(balanceFile)
+	balanceText := string(data)
+	balance, _ := strconv.ParseFloat(balanceText, 64)
+
+	// https://golang.org/pkg/strconv/#ParseFloat
+	return balance
 }
