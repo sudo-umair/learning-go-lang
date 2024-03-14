@@ -24,15 +24,14 @@ func main() {
 		birthdate: birthdateVal,
 	}
 
-	outputUserDetails(user1)
+	outputUserDetails(&user1)
 }
 
-func outputUserDetails(u user) {
+func outputUserDetails(u *user) {
 	fmt.Println("First Name:", u.firstName)
 	fmt.Println("Last Name:", u.lastName)
 	fmt.Println("Birthdate:", u.birthdate)
 	fmt.Println("Created At:", u.createdAt)
-
 }
 
 func getUserData(promptText string) string {
