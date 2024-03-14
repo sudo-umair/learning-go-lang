@@ -4,3 +4,4 @@
 - [Module 02 - Go Essentials](module-02/README.md)
 - [Module 03 - Working with Packages](module-03/README.md)
 - [Module 04 - Understanding Pointers](module-04/README.md)
+- [Module 05 - Structs and Custom Types](module-05/README.md)
