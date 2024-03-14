@@ -8,3 +8,7 @@
 - Type conversion
 - Getting input from user
 - Formatting strings
+- Variable scope
+- Functions
+- Multiple return values
+- Named return values
