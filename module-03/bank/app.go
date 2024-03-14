@@ -24,12 +24,7 @@ func main() {
 
 	for {
 		fmt.Println("What would you like to do today?")
-		fmt.Println("Please select an option:")
-
-		fmt.Println("1. Balance")
-		fmt.Println("2. Deposit")
-		fmt.Println("3. Withdraw")
-		fmt.Println("4. Exit")
+		presentOptions()
 
 		var choice int
 		fmt.Print("Enter your choice: ")
