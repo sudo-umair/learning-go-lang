@@ -1,3 +1,3 @@
-module com.pointers
+module com/pointers
 
 go 1.22.1
