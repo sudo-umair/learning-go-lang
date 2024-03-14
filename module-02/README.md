@@ -16,3 +16,5 @@
 - `if`-`else` statements
 - Nested `if`-`else` statements
 - For loops
+- Infinite For loops
+- `break` and `continue` statements

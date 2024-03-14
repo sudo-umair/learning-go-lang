@@ -7,7 +7,7 @@ func main() {
 
 	fmt.Println("Welcome to the bank!")
 
-	for i := 0; i < 5; i++ {
+	for {
 		fmt.Println("What would you like to do today?")
 		fmt.Println("Please select an option:")
 
@@ -35,7 +35,7 @@ func main() {
 
 			if depositAmount <= 0 {
 				fmt.Println("Invalid amount!, must be greater than 0")
-				return
+				continue
 			}
 
 			accountBalance += depositAmount
@@ -47,21 +47,24 @@ func main() {
 
 			if withdrawAmount <= 0 {
 				fmt.Println("Invalid amount!, must be greater than 0")
-				return
+				continue
 			}
 
 			if withdrawAmount > accountBalance {
 				fmt.Printf("Insufficient funds! Your account balance is: %.2f\n", accountBalance)
-				return
+				continue
 			}
 
 			accountBalance -= withdrawAmount
 			fmt.Printf("Your new account balance is: %.2f\n", accountBalance)
 		} else if choice == 4 { // Exit
-			fmt.Println("Thank you for using the bank!")
+			fmt.Println("Goodbye!")
+			break
 		} else {
 			fmt.Println("Invalid choice")
+			break
 		}
-
 	}
+
+	fmt.Println("Thank you for using the bank!")
 }
