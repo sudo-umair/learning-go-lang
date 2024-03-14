@@ -6,3 +6,4 @@
 - Accessing fields of struct types
 - Using pointers with struct types
 - Adding methods to struct types
+- Mutating struct instances with methods and pointers
