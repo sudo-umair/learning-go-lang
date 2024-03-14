@@ -15,3 +15,4 @@
 - Control structures
 - `if`-`else` statements
 - Nested `if`-`else` statements
+- For loops
