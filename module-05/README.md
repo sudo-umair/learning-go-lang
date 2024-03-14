@@ -8,3 +8,4 @@
 - Adding methods to struct types
 - Mutating struct instances with methods and pointers
 - Constructor functions for struct types
+- Input Checking and Error Handling
