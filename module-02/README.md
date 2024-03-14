@@ -18,3 +18,4 @@
 - For loops
 - Infinite For loops
 - `break` and `continue` statements
+- Switch statements
