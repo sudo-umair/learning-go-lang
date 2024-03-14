@@ -17,6 +17,7 @@ func main() {
 		fmt.Println("ERROR!")
 		fmt.Println(err)
 		fmt.Println("-----------------------------------")
+		// panic("Could not read balance file")
 	}
 
 	fmt.Println("Welcome to the bank!")

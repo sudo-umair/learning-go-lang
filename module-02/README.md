@@ -21,3 +21,4 @@
 - Switch statements
 - File I/O
 - Error handling
+- Panic
