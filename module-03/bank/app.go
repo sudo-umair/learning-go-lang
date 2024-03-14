@@ -1,17 +1,15 @@
 package main
 
 import (
-	"errors"
 	"fmt"
-	"os"
-	"strconv"
+
+	"com/bank/file_ops"
 )
 
 const balanceFile = "balance.txt"
-const defaultBalance = 1000.0
 
 func main() {
-	accountBalance, err := readBalanceFromFile()
+	accountBalance, err := file_ops.ReadFloatFromFile(balanceFile)
 
 	if err != nil {
 		fmt.Println("ERROR!")
@@ -46,7 +44,7 @@ func main() {
 			}
 
 			accountBalance += depositAmount
-			writeBalanceToFile(accountBalance)
+			file_ops.WriteFloatToFile(balanceFile, accountBalance)
 			fmt.Printf("Your new account balance is: %.2f\n", accountBalance)
 
 		case 3: // Withdraw
@@ -65,7 +63,7 @@ func main() {
 			}
 
 			accountBalance -= withdrawAmount
-			writeBalanceToFile(accountBalance)
+			file_ops.WriteFloatToFile(balanceFile, accountBalance)
 			fmt.Printf("Your new account balance is: %.2f\n", accountBalance)
 
 		case 4: // Exit
@@ -80,29 +78,4 @@ func main() {
 
 	}
 
-}
-
-func writeBalanceToFile(balance float64) {
-	balanceText := fmt.Sprintf("%.2f", balance)
-	os.WriteFile(balanceFile, []byte(balanceText), 0644)
-
-	// https://www.redhat.com/sysadmin/linux-file-permissions-explained
-}
-
-func readBalanceFromFile() (float64, error) {
-	data, err := os.ReadFile(balanceFile)
-
-	if err != nil {
-		return defaultBalance, errors.New("could not read balance file")
-	}
-
-	balanceText := string(data)
-	balance, err := strconv.ParseFloat(balanceText, 64)
-
-	if err != nil {
-		return defaultBalance, errors.New("could not parse balance")
-	}
-
-	// https://golang.org/pkg/strconv/#ParseFloat
-	return balance, nil
 }
