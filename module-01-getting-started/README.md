@@ -1,4 +1,4 @@
-### Module 01
+### Module 01 - Getting Started
 
 - Installing Go
 - Setting up environment and editor

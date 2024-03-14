@@ -1,4 +1,4 @@
-### Module 02
+### Module 02 - Go Essentials
 
 - Go syntax
 - Understanding `package` and `import`
