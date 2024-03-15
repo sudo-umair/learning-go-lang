@@ -14,3 +14,8 @@
 - Embedding struct types
 - Anonymous fields
 - Custom types
+- Reading string from console using bufio
+- `strings` package
+- `encoding/json` package
+- Store data in JSON format
+- Adding metadata to struct fields
