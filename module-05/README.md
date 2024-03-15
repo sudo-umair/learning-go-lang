@@ -13,3 +13,4 @@
 - Exposing struct methods and constructor
 - Embedding struct types
 - Anonymous fields
+- Custom types
