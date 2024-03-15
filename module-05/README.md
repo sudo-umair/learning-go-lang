@@ -11,3 +11,5 @@
 - Input Checking and Error Handling
 - Struct in separate package
 - Exposing struct methods and constructor
+- Embedding struct types
+- Anonymous fields
