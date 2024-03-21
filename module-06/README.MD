@@ -6,3 +6,4 @@
 - Any value Allowing interfaces
 - Type switches
 - Extracting type information from values
+- Generics in Go
