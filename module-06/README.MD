@@ -3,3 +3,6 @@
 - Interfaces in Go
 - Convention for naming interfaces
 - Embedding interfaces
+- Any value Allowing interfaces
+- Type switches
+- Extracting type information from values
