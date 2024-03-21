@@ -23,6 +23,12 @@ type outputable interface {
 }
 
 func main() {
+
+	printSomething("Welcome to the Notes and Todos App!")
+	printSomething(2)
+	printSomething(2.5)
+	printSomething(true)
+
 	todoText := getTodoData()
 	todo, err := todo.New(todoText)
 
@@ -51,6 +57,19 @@ func main() {
 		return
 	}
 
+}
+
+func printSomething(value interface{}) {
+	switch value.(type) {
+	case int:
+		fmt.Println("Integer: ", value)
+	case float64:
+		fmt.Println("Float: ", value)
+	case string:
+		fmt.Println("String: ", value)
+	default:
+		fmt.Println("Unknown type: ", value)
+	}
 }
 
 func outputData(data outputable) error {
