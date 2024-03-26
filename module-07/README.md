@@ -4,3 +4,6 @@
 - Defining type and length of an array
 - Accessing and modifying elements of an array
 - Slices and how to create them
+- Modifying elements of a slice modifies the original array
+- Using the `len` and `cap` functions with slices
+- Reslicing a slice
