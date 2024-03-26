@@ -3,3 +3,4 @@
 - Initialize an array
 - Defining type and length of an array
 - Accessing and modifying elements of an array
+- Slices and how to create them
