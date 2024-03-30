@@ -4,3 +4,4 @@
 - Function types
 - Passing functions as arguments
 - Returning functions
+- Anonymous functions
