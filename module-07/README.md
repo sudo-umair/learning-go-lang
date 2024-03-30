@@ -10,3 +10,6 @@
 - Dynamically creating arrays without specifying length
 - `append` function to add elements to a slice
 - adding multiple elements to a slice using the `...` unpacking operator
+- Maps and how to create them
+- Accessing and modifying elements of a map
+- Deleting elements from a map using the `delete` function
