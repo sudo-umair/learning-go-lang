@@ -13,3 +13,5 @@
 - Maps and how to create them
 - Accessing and modifying elements of a map
 - Deleting elements from a map using the `delete` function
+- `make` function to create an array, slice, or map
+- `range` function to iterate over an array, slice, or map
