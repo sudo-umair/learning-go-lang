@@ -7,3 +7,4 @@
 - [Module 05 - Structs and Custom Types](module-05/README.md)
 - [Module 06 - Interfaces and Generic Code](module-06/README.md)
 - [Module 07 - Managing related data with Arrays, Slices, and Maps](module-07/README.md)
+- [Module 08 - Functions (Deep Dive)](module-08/README.md)
