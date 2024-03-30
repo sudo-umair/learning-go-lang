@@ -7,3 +7,5 @@
 - Modifying elements of a slice modifies the original array
 - Using the `len` and `cap` functions with slices
 - Reslicing a slice
+- Dynamically creating arrays without specifying length
+- `append` function to add elements to a slice
