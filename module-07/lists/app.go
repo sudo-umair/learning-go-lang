@@ -6,10 +6,14 @@ func main() {
 	prices := []float64{10.99, 4.5}
 	fmt.Println("prices:", prices[0:1])
 
-	prices[0] = 5.99
-	fmt.Println("prices:", prices)
+	// prices[0] = 5.99
+	// fmt.Println("prices:", prices)
 
 	prices = append(prices, 3.5)
+	fmt.Println("prices:", prices)
+
+	discountedPrices := []float64{2.5, 1.5}
+	prices = append(prices, discountedPrices...)
 	fmt.Println("prices:", prices)
 }
 

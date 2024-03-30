@@ -9,3 +9,4 @@
 - Reslicing a slice
 - Dynamically creating arrays without specifying length
 - `append` function to add elements to a slice
+- adding multiple elements to a slice using the `...` unpacking operator
