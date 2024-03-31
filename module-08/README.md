@@ -8,3 +8,4 @@
 - Closures
 - Factory functions
 - Recursion
+- Variadic functions

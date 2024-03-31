@@ -45,6 +45,14 @@ func main() {
 	// recursion
 	fmt.Println("Factorial of 5:", factorial(5))
 	fmt.Println("Factorial of 10:", factorial(10))
+
+	// variadic functions
+	sum0 := sumUp(1, 2, 3, 4, 5)
+	fmt.Println(sum0)
+
+	sum1 := sumUp([]int{1, 2, 3, 4, 5}...)
+	fmt.Println(sum1)
+
 }
 
 func transformNumbers(numbers *[]int, transform TransformFunc) []int {
@@ -66,6 +74,14 @@ func factorial(n int) int {
 		return 1
 	}
 	return n * factorial(n-1)
+}
+
+func sumUp(numbers ...int) int {
+	sum := 0
+	for _, n := range numbers {
+		sum += n
+	}
+	return sum
 }
 
 // func getTransformerFn(numbers *[]int) TransformFunc {
