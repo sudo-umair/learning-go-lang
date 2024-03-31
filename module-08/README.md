@@ -5,3 +5,5 @@
 - Passing functions as arguments
 - Returning functions
 - Anonymous functions
+- Closures
+- Factory functions
