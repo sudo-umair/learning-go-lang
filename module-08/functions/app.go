@@ -42,6 +42,9 @@ func main() {
 	tripleNumbers := transformNumbers(&numbers, triple)
 	fmt.Println("Numbers:", numbers, "Tripled Numbers:", tripleNumbers)
 
+	// recursion
+	fmt.Println("Factorial of 5:", factorial(5))
+	fmt.Println("Factorial of 10:", factorial(10))
 }
 
 func transformNumbers(numbers *[]int, transform TransformFunc) []int {
@@ -56,6 +59,13 @@ func createTransformer(factor int) func(int) int {
 	return func(n int) int {
 		return n * factor
 	}
+}
+
+func factorial(n int) int {
+	if n == 0 {
+		return 1
+	}
+	return n * factorial(n-1)
 }
 
 // func getTransformerFn(numbers *[]int) TransformFunc {

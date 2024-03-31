@@ -7,3 +7,4 @@
 - Anonymous functions
 - Closures
 - Factory functions
+- Recursion
