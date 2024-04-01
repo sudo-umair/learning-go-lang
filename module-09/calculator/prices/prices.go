@@ -2,19 +2,19 @@ package prices
 
 import (
 	"com/calculator/conversion"
-	filemanager "com/calculator/file-manager"
+	iomanager "com/calculator/io-manager"
 	"fmt"
 )
 
 type TaxIncludedPriceJob struct {
-	TaxRate           float64
-	InputPrices       []float64
-	TaxIncludedPrices map[string]string
+	IOModule          iomanager.I0Manager `json:"-"`
+	TaxRate           float64             `json:"tax_rate"`
+	InputPrices       []float64           `json:"input_prices"`
+	TaxIncludedPrices map[string]string   `json:"tax_included_prices"`
 }
 
 func (job *TaxIncludedPriceJob) LoadData() {
-
-	lines, err := filemanager.ReadLinesFromFile("prices.txt")
+	lines, err := job.IOModule.ReadLines()
 	if err != nil {
 		fmt.Println(err)
 		return
@@ -39,14 +39,13 @@ func (job *TaxIncludedPriceJob) Process() {
 	}
 
 	job.TaxIncludedPrices = result
-
-	fileName := fmt.Sprintf("result_%0.0f.json", job.TaxRate*100)
-	filemanager.WriteJson(fileName, job.TaxIncludedPrices)
+	job.IOModule.WriteResult(job)
 }
 
-func NewTaxIncludedPriceJob(taxRate float64) *TaxIncludedPriceJob {
+func NewTaxIncludedPriceJob(iom iomanager.I0Manager, taxRate float64) *TaxIncludedPriceJob {
 	return &TaxIncludedPriceJob{
 		TaxRate:     taxRate,
 		InputPrices: []float64{10, 20, 30},
+		IOModule:    iom,
 	}
 }
